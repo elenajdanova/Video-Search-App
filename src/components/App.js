@@ -6,7 +6,7 @@ import VideoList from './VideoList';
 class App extends React.Component{
   state = { videos:[] };
 
-  onTermChange =  async (term) => {
+  onTermChange = async (term) => {
     let response = await youtube.get('/search', {
       params:{
         q: term
@@ -15,6 +15,8 @@ class App extends React.Component{
     this.setState({ videos: response.data.items });
     //console.log(response.data.items);
   };
+
+
 
   render(){
     return (
